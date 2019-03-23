@@ -56,4 +56,46 @@ router.post('/register', function (req, res) {
 });
 
 
+// @type   POST
+// @route  /api/auth/login
+// @desc   route login of users
+// @access PUBLIC
+router.post('/login', (req, res) => {
+    const password = req.body.password;
+    Person.findOne({
+            email: req.body.email,
+        })
+        .then(person => {
+            if (!person) {
+                return res.status(404).json({
+                    emailerror: "User not found with email"
+                });
+            } else {
+                hash = person.password;
+                bcrypt.compareSync(password, hash)
+                    .then(isCorrect => {
+                        if (isCorrect) {
+                            res.json({
+                                success: 'USer is able to login successfully'
+                            });
+                        } else {
+                            res.status(400).json({
+                                password: 'Password is not authenticated'
+                            })
+                        }
+                    })
+                    .catch((err) => console.log(err))
+
+                if (check == true) {
+                    res.json("User is authenticated");
+                } else {
+                    res.json("User is not authenticated");
+                }
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
 module.exports = router;
