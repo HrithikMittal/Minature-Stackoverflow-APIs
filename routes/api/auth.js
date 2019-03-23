@@ -4,7 +4,8 @@ const bcrypt = require('bcryptjs');
 const jsonwt = require('jsonwebtoken');
 const passport = require('passport');
 const passportjwt = require('passport-jwt');
-const key = require('../../setup/myurl');
+
+var salt = bcrypt.genSaltSync(10);
 
 // @type   GET
 // @route  /api/auth
@@ -26,8 +27,31 @@ const Person = require("../../models/Person");
 router.post('/register', function (req, res) {
     Person.findOne({
         email: req.body.email
-    }).then((req, res) => {
-        console.log('Everything is fine')
+    }).then(person => {
+        if (person) {
+            return res
+                .status(400)
+                .json({
+                    emailerror: "Email is already regsitered in our system"
+                });
+        } else {
+            const newPerson = new Person({
+                name: req.body.name,
+                email: req.body.email,
+                password: req.body.password,
+                username: req.body.username
+            });
+            //Encrypt password using bcryptjs
+            newPerson.password = bcrypt.hashSync(newPerson.password, salt, (req, res) => {
+                if (err) throw err;
+            });
+
+            newPerson
+                .save()
+                .then(person => res.json(person))
+                .catch(err => console.log(err));
+
+        }
     }).catch(err => console.log(err));
 });
 
