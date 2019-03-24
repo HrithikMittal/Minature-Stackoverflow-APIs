@@ -55,7 +55,7 @@ router.post("/register", (req, res) => {
 });
 
 // @type    POST
-//@route    /api/auth/login
+// @route    /api/auth/login
 // @desc    route for login of users
 // @access  PUBLIC
 
@@ -109,7 +109,7 @@ router.post("/login", (req, res) => {
 });
 
 // @type    GET
-//@route    /api/auth/profile
+// @route    /api/auth/profile
 // @desc    route for user profile
 // @access  PRIVATE
 
@@ -128,5 +128,6 @@ router.get(
         });
     }
 );
+
 
 module.exports = router;
