@@ -113,9 +113,7 @@ router.post("/login", (req, res) => {
 // @desc    route for user profile
 // @access  PRIVATE
 
-router.get(
-    "/profile",
-    passport.authenticate("jwt", {
+router.get("/profile", passport.authenticate("jwt", {
         session: false
     }),
     (req, res) => {

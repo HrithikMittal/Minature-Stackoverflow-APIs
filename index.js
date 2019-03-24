@@ -1,52 +1,46 @@
-var express = require('express');
-var mongoose = require('mongoose');
-var bodyparser = require('body-parser');
-
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyparser = require("body-parser");
+const passport = require("passport");
 
 //bring all routes
-const auth = require('./routes/api/auth');
-const profile = require('./routes/api/profile');
-const questions = require('./routes/api/questions');
+const auth = require("./routes/api/auth");
+const questions = require("./routes/api/questions");
+const profile = require("./routes/api/profile");
 
-var app = express();
+const app = express();
 
-
-// Middleware for bodyparser
+//Middleware for bodyparser
 app.use(bodyparser.urlencoded({
     extended: false
 }));
 app.use(bodyparser.json());
 
+//mongoDB configuration
+const db = require("./setup/myurl").mongoURL;
 
-//mongoDB confriguration
-const db = require('./setup/myurl.js').mongoURL;
-
-
-
-
-//Attempt to connect to database - Promise
-mongoose.connect(db)
-    .then(() => console.log('MongoDB connected successfully'))
+//Attempt to connect to database
+mongoose
+    .connect(db)
+    .then(() => console.log("MongoDB connected successfully"))
     .catch(err => console.log(err));
 
+//Passport middleware
+app.use(passport.initialize());
 
+//Config for JWT strategy
+require("./strategies/jsonwtStrategy")(passport);
 
-// just for testing -> route
-app.get('/', function (req, res) {
-    // console.log('Hello I am happy');
-    res.json({
-        'message': 'HI'
-    });
+//just for testing  -> route
+app.get("/", (req, res) => {
+    res.send("Hey there Big stack");
 });
 
+//actual routes
+app.use("/api/auth", auth);
+app.use("/api/questions", questions);
+app.use("/api/profile", profile);
 
-//actual route
-app.use('/api/auth', auth);
-app.use('/api/profile', profile);
-app.use('/api/question', questions);
+const port = process.env.PORT || 3000;
 
-var port = process.env.PORT || 3000;
-
-app.listen(3000, () => {
-    console.log(`Server is listening on port ${port}`);
-});
+app.listen(port, () => console.log(`App is running at ${port}`));
