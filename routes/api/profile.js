@@ -121,4 +121,27 @@ router.get('/:username', function (req, res) {
         .catch(err => console.log('Error in fetching username ' + err));
 });
 
+// @type    GET
+//@route    /api/profile/find/everyone
+// @desc    route for getting user profile of Everyone
+// @access  PUBLIC
+router.get('/find/everyone', function (req, res) {
+    Profile.find({})
+        .populate('user', ["name", "profilepic"])
+        .then(profile => {
+            if (!profile) {
+                res.send(404).json({
+                    username: 'users not found'
+                });
+            }
+            res.json(profile);
+
+        })
+        .catch(err => console.log('Error in fetching username ' + err));
+});
+
+
+
+
+
 module.exports = router;
