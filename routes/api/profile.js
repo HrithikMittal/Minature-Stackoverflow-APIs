@@ -163,7 +163,40 @@ router.delete('/',
             }).catch(err => console.log(err));
     });
 
+// @type    DELETE
+//@route    /api/profile/workrole
+// @desc    route for adding work profile of a person
+// @access  PRIVATE
 
+router.post('/workrole', passport.authenticate('jwt', {
+    session: false
+}), (req, res) => {
+    Profile.findOne({
+            user: req.user.id
+        })
+        .then(profile => {
+            if (!profile) {
+                res.send(404).json({
+                    username: 'users not found'
+                });
+            }
+            const network = {
+                role: req.body.role,
+                company: req.body.company,
+                country: req.body.country,
+                from: req.body.from,
+                to: req.body.to,
+                current: req.body.current,
+                details: req.body.details
+            };
+            profile.workrole.unshift(network);
+            profile
+                .save()
+                .then(profile => res.json(profile))
+                .catch(err => console.log(err));
+        })
+        .catch(err => console.log(err));
+});
 
 
 module.exports = router;
