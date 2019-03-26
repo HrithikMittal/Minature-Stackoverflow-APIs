@@ -163,7 +163,7 @@ router.delete('/',
             }).catch(err => console.log(err));
     });
 
-// @type    DELETE
+// @type    POST
 //@route    /api/profile/workrole
 // @desc    route for adding work profile of a person
 // @access  PRIVATE
@@ -196,6 +196,28 @@ router.post('/workrole', passport.authenticate('jwt', {
                 .catch(err => console.log(err));
         })
         .catch(err => console.log(err));
+});
+
+// @type    DELETE
+//@route    /api/profile/workrole/:w_id
+// @desc    route for deleting a specific workrole
+// @access  PRIVATE
+router.delete('/workrole/:w_id', passport.authenticate('jwt', {
+    session: false
+}), (req, res) => {
+    Profile.findOne({
+        user: req.user.id
+    }).then(profile => {
+        const removethis = profile.workrole
+            .map(item => item.id)
+            .indexOf(req.params.w_id);
+
+        profile.workrole.splice(removethis, 1);
+        profile.save()
+            .then(profile => res.json(profile))
+            .catch(err => console.log(err));
+
+    }).catch(err => console.log('delet is error ' + err));
 });
 
 
