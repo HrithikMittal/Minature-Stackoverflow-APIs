@@ -1,23 +1,24 @@
 {
-  "name": "stackoverflow",
+  "name": "bigstack",
   "version": "1.0.0",
-  "authow": "Adhikansh Mittal",
-  "description": "a meniture of stackoverflow",
+  "description": "a small version of stackoverflow",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
+  "keywords": [
+    "stackoverflow"
+  ],
+  "author": "Adhikansh Mittal",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.4.19",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.1.6",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "password": "^0.1.1",
-    "validator.js": "^2.0.3"
+    "validator": "^10.4.0"
   }
 }

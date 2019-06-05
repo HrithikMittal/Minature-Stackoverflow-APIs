@@ -1,4 +1,4 @@
 module.exports = {
-    mongoURL: "mongodb://adhi:adhikansh123@ds125994.mlab.com:25994/stackoverflow",
-    secret: "mystrongsecret"
+  mongoURL: "mongodb://hitesh:hitesh@ds161610.mlab.com:61610/lcocourse",
+  secret: "mystrongsecret"
 };

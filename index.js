@@ -11,9 +11,7 @@ const profile = require("./routes/api/profile");
 const app = express();
 
 //Middleware for bodyparser
-app.use(bodyparser.urlencoded({
-    extended: false
-}));
+app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
 //mongoDB configuration
@@ -21,9 +19,9 @@ const db = require("./setup/myurl").mongoURL;
 
 //Attempt to connect to database
 mongoose
-    .connect(db)
-    .then(() => console.log("MongoDB connected successfully"))
-    .catch(err => console.log(err));
+  .connect(db)
+  .then(() => console.log("MongoDB connected successfully"))
+  .catch(err => console.log(err));
 
 //Passport middleware
 app.use(passport.initialize());
@@ -33,7 +31,7 @@ require("./strategies/jsonwtStrategy")(passport);
 
 //just for testing  -> route
 app.get("/", (req, res) => {
-    res.send("Hey there Big stack");
+  res.send("Hey there Big stack");
 });
 
 //actual routes
