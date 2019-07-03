@@ -4,7 +4,7 @@ const bodyparser = require("body-parser");
 const passport = require("passport");
 const User = require("./models/User");
 const db = require("./mysetup/myurl").myurl;
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const jsonwt = require("jsonwebtoken");
 
 const saltRounds = 10;
@@ -23,8 +23,6 @@ mongoose
   .catch(err => {
     console.log("Error is ", err.message);
   });
-
-
 
 app.use(passport.initialize());
 
@@ -46,7 +44,7 @@ app.post("/api/auth/register", async (req, res) => {
     return res.send("User already exists...");
   }
 
-  const hashedPassword = await bcrypt.hash(newUser.password, saltRounds)
+  const hashedPassword = await bcrypt.hash(newUser.password, saltRounds);
   newUser.password = hashedPassword;
 
   await newUser.save();
@@ -54,7 +52,6 @@ app.post("/api/auth/register", async (req, res) => {
   res.status(200).send({
     success: true
   });
-
 });
 
 app.post("/api/auth/login", async (req, res) => {
@@ -63,7 +60,7 @@ app.post("/api/auth/login", async (req, res) => {
     password: req.body.password
   };
 
-  const profile = await User.findOne({ email: user.email}).exec();
+  const profile = await User.findOne({ email: user.email }).exec();
   if (!profile) {
     return res.send("User not exist");
   }
@@ -86,12 +83,16 @@ app.post("/api/auth/login", async (req, res) => {
   });
 });
 
-app.get("/api/auth/profile", passport.authenticate("jwt", { session: false }), (req, res) => {
-  res.json({
-    id: req.user.id,
-    email: req.user.email
-  });
-});
+app.get(
+  "/api/auth/profile",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    res.json({
+      id: req.user.id,
+      email: req.user.email
+    });
+  }
+);
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
