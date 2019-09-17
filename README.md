@@ -91,6 +91,68 @@ module.exports = {
 ```
 <i>Note: some of the APIs which are mentionted above are not authenticate so please remember to add it. So it will help to proctect the private routes.</i>
 
+## Routes
+### Profile
+<table>
+	<tr>
+		<th>S.No.</th>
+		<th>Route</th>
+		<th>Method</th>
+		<th>Access</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>1.</td>
+		<td>"/"</td>
+		<td>GET</td>
+		<td>Private</td>
+		<td>to get personal profile</td>
+	</tr>
+	<tr>
+		<td>2.</td>
+		<td>"/"</td>
+		<td>POST</td>
+		<td>Private</td>
+		<td>for UPDATING/SAVING personnal user profile</td>
+	</tr>
+	<tr>
+		<td>3.</td>
+		<td>"/:username"</td>
+		<td>GET</td>
+		<td>Public</td>
+		<td>for getting user profile based on USERNAME.</td>
+	</tr>
+	<tr>
+		<td>4.</td>
+		<td>"/find/everyone"</td>
+		<td>GET</td>
+		<td>Public</td>
+		<td>for getting user profile of EVERYONE.</td>
+	</tr>
+	<tr>
+		<td>5.</td>
+		<td>"/"</td>
+		<td>DELETE</td>
+		<td>Private</td>
+		<td>for deleting user based on ID.</td>
+	</tr>
+	<tr>
+		<td>6.</td>
+		<td>"/workrole"</td>
+		<td>POST</td>
+		<td>Private</td>
+		<td>for adding work profile of a person.</td>
+	</tr>
+	<tr>
+		<td>7.</td>
+		<td>"/workrole/:w_id"</td>
+		<td>DELETE</td>
+		<td>Private</td>
+		<td>for deleting a specific workrole.</td>
+	</tr>
+	
+</table>
+
 ## Deployment
 
 This api can be hosted on platform like heroku, aws, and others. MongoDB Atlas or Matlab can be used for remote database.<br /> For instance, the application can be deployed on [Heroku](https://signup.heroku.com/login) by creating and registering an account. Following, create a new app and choose a deployment method (terminal or github) and follow the instruction there. Remote database can be created using Mongodb Atlas or Matlab.<br /> For [Mongodb Atlas](https://cloud.mongodb.com/user?_ga=2.185306281.1809166196.1559570784-2125252051.1557828824#/atlas/register/accountProfile), you need to just to create your account and make a new cluster and link the cluster to your application through a URL. Following the given steps, you would have a remote application up and running.
