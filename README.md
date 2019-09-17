@@ -153,6 +153,46 @@ module.exports = {
 	
 </table>
 
+### Question
+<table>
+	<tr>
+		<th>S.No.</th>
+		<th>Route</th>
+		<th>Method</th>
+		<th>Access</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>1.</td>
+		<td>"/"</td>
+		<td>GET</td>
+		<td>PUBLIC</td>
+		<td>for showing all questions./td>
+	</tr>
+	<tr>
+		<td>2.</td>
+		<td>"/"</td>
+		<td>POST</td>
+		<td>Private</td>
+		<td>for submitting questions./td>
+	</tr>
+	<tr>
+		<td>3.</td>
+		<td>"/answers/:id"</td>
+		<td>POST</td>
+		<td>Private</td>
+		<td>for submitting answers to questions./td>
+	</tr>
+	<tr>
+		<td>4.</td>
+		<td>"upvote/:id"</td>
+		<td>POST</td>
+		<td>Private</td>
+		<td>for upvoting.</td>
+	</tr>
+	
+</table>
+
 ## Deployment
 
 This api can be hosted on platform like heroku, aws, and others. MongoDB Atlas or Matlab can be used for remote database.<br /> For instance, the application can be deployed on [Heroku](https://signup.heroku.com/login) by creating and registering an account. Following, create a new app and choose a deployment method (terminal or github) and follow the instruction there. Remote database can be created using Mongodb Atlas or Matlab.<br /> For [Mongodb Atlas](https://cloud.mongodb.com/user?_ga=2.185306281.1809166196.1559570784-2125252051.1557828824#/atlas/register/accountProfile), you need to just to create your account and make a new cluster and link the cluster to your application through a URL. Following the given steps, you would have a remote application up and running.
