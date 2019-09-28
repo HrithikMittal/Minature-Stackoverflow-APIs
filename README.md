@@ -103,49 +103,49 @@ module.exports = {
 	</tr>
 	<tr>
 		<td>1.</td>
-		<td>"/"</td>
+		<td>/</td>
 		<td>GET</td>
 		<td>Private</td>
 		<td>to get personal profile</td>
 	</tr>
 	<tr>
 		<td>2.</td>
-		<td>"/"</td>
+		<td>/</td>
 		<td>POST</td>
 		<td>Private</td>
 		<td>for UPDATING/SAVING personnal user profile</td>
 	</tr>
 	<tr>
 		<td>3.</td>
-		<td>"/:username"</td>
+		<td>/:username</td>
 		<td>GET</td>
 		<td>Public</td>
 		<td>for getting user profile based on USERNAME.</td>
 	</tr>
 	<tr>
 		<td>4.</td>
-		<td>"/find/everyone"</td>
+		<td>/find/everyone</td>
 		<td>GET</td>
 		<td>Public</td>
 		<td>for getting user profile of EVERYONE.</td>
 	</tr>
 	<tr>
 		<td>5.</td>
-		<td>"/"</td>
+		<td>/</td>
 		<td>DELETE</td>
 		<td>Private</td>
 		<td>for deleting user based on ID.</td>
 	</tr>
 	<tr>
 		<td>6.</td>
-		<td>"/workrole"</td>
+		<td>/workrole</td>
 		<td>POST</td>
 		<td>Private</td>
 		<td>for adding work profile of a person.</td>
 	</tr>
 	<tr>
 		<td>7.</td>
-		<td>"/workrole/:w_id"</td>
+		<td>/workrole/:w_id</td>
 		<td>DELETE</td>
 		<td>Private</td>
 		<td>for deleting a specific workrole.</td>
