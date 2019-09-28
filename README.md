@@ -164,28 +164,28 @@ module.exports = {
 	</tr>
 	<tr>
 		<td>1.</td>
-		<td>"/"</td>
+		<td>/</td>
 		<td>GET</td>
 		<td>PUBLIC</td>
 		<td>for showing all questions.</td>
 	</tr>
 	<tr>
 		<td>2.</td>
-		<td>"/"</td>
+		<td>/</td>
 		<td>POST</td>
 		<td>Private</td>
 		<td>for submitting questions.</td>
 	</tr>
 	<tr>
 		<td>3.</td>
-		<td>"/answers/:id"</td>
+		<td>/answers/:id</td>
 		<td>POST</td>
 		<td>Private</td>
 		<td>for submitting answers to questions.</td>
 	</tr>
 	<tr>
 		<td>4.</td>
-		<td>"upvote/:id"</td>
+		<td>upvote/:id</td>
 		<td>POST</td>
 		<td>Private</td>
 		<td>for upvoting.</td>
