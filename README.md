@@ -185,7 +185,7 @@ module.exports = {
 	</tr>
 	<tr>
 		<td>4.</td>
-		<td>upvote/:id</td>
+		<td>/upvote/:id</td>
 		<td>POST</td>
 		<td>Private</td>
 		<td>for upvoting.</td>
