@@ -194,7 +194,6 @@ module.exports = {
 </table>
 
 ## Deployment
-
 This api can be hosted on platform like heroku, aws, and others. MongoDB Atlas or Matlab can be used for remote database.<br /> For instance, the application can be deployed on [Heroku](https://signup.heroku.com/login) by creating and registering an account. Following, create a new app and choose a deployment method (terminal or github) and follow the instruction there. Remote database can be created using Mongodb Atlas or Matlab.<br /> For [Mongodb Atlas](https://cloud.mongodb.com/user?_ga=2.185306281.1809166196.1559570784-2125252051.1557828824#/atlas/register/accountProfile), you need to just to create your account and make a new cluster and link the cluster to your application through a URL. Following the given steps, you would have a remote application up and running.
 
 ## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
