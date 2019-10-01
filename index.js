@@ -11,7 +11,7 @@ const profile = require("./routes/api/profile");
 const app = express();
 
 //Middleware for bodyparser
-app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 
 //mongoDB configuration
