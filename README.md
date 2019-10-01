@@ -1,4 +1,4 @@
-# Minature-Stackoverflow-API-s [![HitCount](http://hits.dwyl.io/HrithikMittal/Minature-Stackoverflow-APIs.svg)](http://hits.dwyl.io/HrithikMittal/Minature-Stackoverflow-APIs) [![Gitter](https://badges.gitter.im/GDTC_Hack-In/P03.svg)](https://gitter.im/GDTC_Hack-In/P03?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+# Minature-Stackoverflow-API's [![HitCount](http://hits.dwyl.io/HrithikMittal/Minature-Stackoverflow-APIs.svg)](http://hits.dwyl.io/HrithikMittal/Minature-Stackoverflow-APIs) [![Gitter](https://badges.gitter.im/GDTC_Hack-In/P03.svg)](https://gitter.im/GDTC_Hack-In/P03?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Minature StackOverflow API is an API's collection which can be used to make the Backend of any Fullstack Application.
 These are the folllowing features in the given API's
