@@ -19,7 +19,7 @@ To work with the api you must have to install the following:
 
 ## Installation
 
-Before doing anything you have to clone or download(and unzip) the project folder, open terminal and navigate to the project folder and run:
+Before doing anything you have to clone or download and unzip the project folder, open terminal and navigate to the project folder and run:
 
 ```bash
 npm install
