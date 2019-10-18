@@ -24,8 +24,7 @@ To work with the api you must have to install the following:
 
 ## Installation
 
-Before doing anything you have to clone or download and unzip the project
-folder, open terminal and navigate to the project folder and run:
+Before doing anything you have to clone or download and unzip the project folder, open terminal and navigate to the project folder and run:
 
 ```bash
 npm install
@@ -231,4 +230,6 @@ have a remote application up and running.
 
 ## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
+
 If you are the helping and contributing one, your efforts and suggestion are always welcomed.
+
